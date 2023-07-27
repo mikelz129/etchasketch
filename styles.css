@@ -1,0 +1,30 @@
+body {
+    background-color: #027148;
+    margin: 6% 30%;
+}
+
+.dimensionButton {
+    margin: 8px;
+}
+
+#etch {
+    border: 1px solid black;
+    width: 700px;
+    height: 700px;
+    background-color: grey;
+    /* margin-left: 50%;
+    margin-right: 50%; */
+}
+
+.row {
+    /* display: flex; */
+    border: 1px solid black
+}
+
+.column {
+    display: flex;
+}
+
+.cell {
+    /* border: 1px solid black */
+}
