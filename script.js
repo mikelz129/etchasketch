@@ -1,5 +1,5 @@
 // Global Variables
-let dimension = 1;
+let dimension = 3;
 let rowNum = 1;
 
 // Determine width and height of EtchASketch
@@ -11,11 +11,18 @@ const getSize = function() {
 const createRow = function() {
     const etchBox = document.querySelector('#etch');
     const addDiv = document.createElement('div');
-    addDiv.classList.add('row',rowNum);
+    addDiv.classList.add('row');
+    addDiv.setAttribute('id', ('row' + rowNum));
     etchBox.appendChild(addDiv);
 }
 
 // Create Cell
+const createCell = function() {
+    const rowToAdd = document.querySelector('#row' + rowNum);
+    const addCell = document.createElement('div');
+    addCell.classList.add('cell');
+    rowToAdd.appendChild(addCell);
+}
 
 
 // Create Grid
@@ -25,7 +32,8 @@ const createGrid = function() {
     // const etchBox = document.querySelector('#etch');
     for (let i = 0; i < dimension; i++) {
         createRow();
-        rowNum++;
-        console.log(i);
+        for (let c = 0; c < dimension; c++)
+            createCell();
+            rowNum++
     }
 }
