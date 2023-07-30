@@ -21,6 +21,7 @@ const createCell = function() {
     const rowToAdd = document.querySelector('#row' + rowNum);
     const addCell = document.createElement('div');
     addCell.classList.add('cell');
+    addCell.addEventListener('mouseover', hoverClassChange);
     rowToAdd.appendChild(addCell);
 }
 
@@ -38,5 +39,12 @@ const createGrid = function() {
     }
 }
 
-// Hover
-
+// Hover Class
+const hoverClassChange = function() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+    this.style.backgroundColor = color;
+}
